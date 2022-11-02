@@ -14,6 +14,18 @@ Springフレームワークについての学習用プロジェクト。
 メソッドの実行前の共通処理を指定する。  
 空文字をnullに変換したりとか、、、  
 
+## ディレクトリ構成
+
+```dir
+- src
+  - main (Javaコード)
+  - resources
+    - templates (HTMLとか)
+    - static (CSSとかJSとか)
+    - application.yml (データベースの設定 | 自動で読み込まれる)
+    - *.sql (データベース作成後に実行されるSQL)
+```
+
 ## 参考文献
 
 - <https://www.udemy.com/share/101w4u3@9mcf2Gbl_hYNQop2w8_6B5L4fzDhgXeC0rmsOpWTN-TSnJXFqZ2YWhllyGoI0LBbKw==/>
