@@ -1,7 +1,7 @@
 # java_spring_beginner.lesson.java
 
 Springフレームワークについての学習用プロジェクト。  
-がんばろ♪
+がんばろ♪  
 
 ## 自分用メモ
 
