@@ -1,4 +1,4 @@
-# java_spring_beginner.lesson.java
+# SpringBasicSource.java
 
 Springフレームワークについての学習用プロジェクト。  
 がんばろ♪  
