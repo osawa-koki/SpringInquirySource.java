@@ -4,6 +4,7 @@ import com.example.demo.entity.Inquiry;
 
 import java.util.List;
 
+
 public interface InquiryDao {
   void insertInquiry(Inquiry inquiry);
   List<Inquiry> getAll();

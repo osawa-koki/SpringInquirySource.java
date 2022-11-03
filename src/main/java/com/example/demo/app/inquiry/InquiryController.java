@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /*
  * Add annotations here
@@ -27,6 +28,16 @@ public class InquiryController {
 	 @Autowired
 	 public InquiryController(InquiryService inquiryService) {
 		 this.inquiryService = inquiryService;
+	 }
+
+	 @GetMapping
+	 public String index(Model model) {
+		 List<Inquiry> list = inquiryService.getAll();
+
+		 model.addAttribute("inquiryList", list);
+		 model.addAttribute("title", "Inquiry Index");
+
+		 return "inquiry/index";
 	 }
 
 	// Add an annotation here
