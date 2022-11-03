@@ -25,6 +25,13 @@ public class InquiryServiceImpl implements InquiryService {
 	}
 
 	@Override
+	public void update(Inquiry inquiry) {
+		if (dao.updateInquiry(inquiry) == 0) {
+			throw new InquiryNotFoundException("cannot find the id specified.");
+		}
+	}
+
+	@Override
 	public List<Inquiry> getAll() {
 		return dao.getAll();
 	}

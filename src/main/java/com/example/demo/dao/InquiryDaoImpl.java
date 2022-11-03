@@ -30,6 +30,15 @@ public class InquiryDaoImpl implements InquiryDao {
     jdbcTemplate.update(sql, inquiry.getName(), inquiry.getEmail(), inquiry.getContents(), inquiry.getCreated());
   }
 
+  @Override
+  public int updateInquiry(Inquiry inquiry) {
+    String sql = "";
+    sql += " UPDATE inquiry ";
+    sql += " SET name = ?, email = ?, contents = ? ";
+    sql += " WHERE id = ?; ";
+    return jdbcTemplate.update(sql, inquiry.getName(), inquiry.getEmail(), inquiry.getContents(), inquiry.getId());
+  }
+
   // エンティティにデータを詰め込む。
   @Override
   public List<Inquiry> getAll() {

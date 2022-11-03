@@ -1,6 +1,7 @@
 package com.example.demo.app.inquiry;
 
 import com.example.demo.entity.Inquiry;
+import com.example.demo.service.InquiryNotFoundException;
 import com.example.demo.service.InquiryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,6 +34,21 @@ public class InquiryController {
 	 @GetMapping
 	 public String index(Model model) {
 		 List<Inquiry> list = inquiryService.getAll();
+
+		 // フォームが来たと仮定してここでInquiryをインスタンス化
+		 Inquiry inquiry = new Inquiry();
+		 inquiry.setId(99);
+		 inquiry.setName("hoge");
+		 inquiry.setEmail("hoge@example.com");
+		 inquiry.setContents("hoge");
+
+		 // 例外処理のキャッチ
+		 try {
+			 inquiryService.update(inquiry);
+		 } catch (InquiryNotFoundException e) {
+			 model.addAttribute("message", e);
+			 return "error/CustomPage";
+		 }
 
 		 model.addAttribute("inquiryList", list);
 		 model.addAttribute("title", "Inquiry Index");
