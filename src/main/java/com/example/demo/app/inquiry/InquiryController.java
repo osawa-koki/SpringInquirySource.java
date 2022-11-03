@@ -32,20 +32,22 @@ public class InquiryController {
 	 public String index(Model model) {
 		 List<Inquiry> list = inquiryService.getAll();
 
-		 // フォームが来たと仮定してここでInquiryをインスタンス化
-		 Inquiry inquiry = new Inquiry();
-		 inquiry.setId(99);
-		 inquiry.setName("hoge");
-		 inquiry.setEmail("hoge@example.com");
-		 inquiry.setContents("hoge");
-
-		 // 例外処理のキャッチ
-		 try {
-			 inquiryService.update(inquiry);
-		 } catch (InquiryNotFoundException e) {
-			 model.addAttribute("message", e);
-			 return "error/CustomPage";
-		 }
+		 // 独自例外のチェック
+		 // 普段はコメントアウト
+//		 // フォームが来たと仮定してここでInquiryをインスタンス化
+//		 Inquiry inquiry = new Inquiry();
+//		 inquiry.setId(99);
+//		 inquiry.setName("hoge");
+//		 inquiry.setEmail("hoge@example.com");
+//		 inquiry.setContents("hoge");
+//
+//		 // 例外処理のキャッチ
+//		 try {
+//			 inquiryService.update(inquiry);
+//		 } catch (InquiryNotFoundException e) {
+//			 model.addAttribute("message", e);
+//			 return "error/CustomPage";
+//		 }
 
 		 model.addAttribute("inquiryList", list);
 		 model.addAttribute("title", "Inquiry Index");
