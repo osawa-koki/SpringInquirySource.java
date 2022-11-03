@@ -34,7 +34,7 @@ public class InquiryDaoImpl implements InquiryDao {
     sql += " SELECT id, name, email, contents, created ";
     sql += " FROM inquiry ";
     List<Map<String, Object>> resultList = jdbcTemplate.queryForList(sql);
-    List<Inquiry> list = new Array<Inquiry>();
+    List<Inquiry> list = new ArrayList<Inquiry>();
     for (Map<String, Object> result: resultList) {
       Inquiry inquiry = new Inquiry();
       inquiry.setId((int)result.get("id"));
