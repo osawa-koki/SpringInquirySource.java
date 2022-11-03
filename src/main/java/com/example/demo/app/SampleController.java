@@ -28,7 +28,7 @@ public class SampleController {
 		// データ(モデル)をHTMLに渡す
 		String sql = "";
 		sql += " SELECT id, name, email ";
-		sql += " FROM inquiry ";
+		sql += " FROM Inquiry ";
 		sql += " WHERE id = 1; ";
 		Map<String, Object> map = jdbcTemplate.queryForMap(sql);
 

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title th:text="${title}">Insert title here</title>
 </head>
 <body>
-<h1>title</h1>
-
-<!-- These are links to use for next lessons -->
-<!-- こちらは後で使用されるリンクです -->
-<p><a href="#" th:href="@{/inquiry}">Inquiry</a></p>
-<p><a href="#" th:href="@{/survey}">Survey</a></p>
+<!-- 「仮のタイトル」はデバグ環境(HTMLをそのまま開く)場合にのみ出力される。 -->
+<h1 th:text="${title}">仮のタイトル</h1>
+<p th:text="${name}"></p>
+<p th:text="${email}"></p>
+<p th:text="${contents}"></p>
 </body>
 </html>
