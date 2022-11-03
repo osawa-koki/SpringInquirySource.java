@@ -52,7 +52,7 @@ public class InquiryController {
 		 model.addAttribute("inquiryList", list);
 		 model.addAttribute("title", "Inquiry Index");
 
-		 return "inquiry/index";
+		 return "inquiry/index_boot";
 	 }
 
 	// Add an annotation here
@@ -65,14 +65,14 @@ public class InquiryController {
 	@GetMapping("/form")
 	public String form(InquiryForm inquiryForm, Model model, @ModelAttribute("complete") String complete) {
 		model.addAttribute("title", "Inquiry Form");
-		return "inquiry/form";
+		return "inquiry/form_boot";
 	}
 
 	// ブラウザバック用
 	@PostMapping("/form")
 	public String formGoBack(InquiryForm inquiryForm, Model model) {
 		model.addAttribute("title", "Inquiry Form");
-		return "inquiry/form";
+		return "inquiry/form_boot";
 	}
 
 
@@ -82,12 +82,12 @@ public class InquiryController {
 
 		 if (result.hasErrors()) {
 			 model.addAttribute("title", "Inquiry Form");
-			 return "inquiry/form";
+			 return "inquiry/form_boot";
 		 }
 
 		 model.addAttribute("title", "Confirm Page");
 
-		 return "inquiry/confirm";
+		 return "inquiry/confirm_boot";
 	}
 
 	// 今回はフラッシュスコープを使用するため、「RedirectAttributes」が必要
@@ -96,7 +96,7 @@ public class InquiryController {
 
 		if (result.hasErrors()) {
 			model.addAttribute("title", "Inquiry Form");
-			return "inquiry/form";
+			return "inquiry/form_boot";
 		}
 
 		// データベースの登録処理
