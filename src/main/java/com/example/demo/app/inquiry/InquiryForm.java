@@ -6,19 +6,22 @@ import javax.validation.constraints.Size;
 
 
 public class InquiryForm{
-	
+
+	// コンストラクタ
 	public InquiryForm() {}
 
 	// バリデーションチェック(message属性でエラーメッセージを独自に設定可能)
-	@Size(min = 1, max = 20, message="Please input 20 characters or less")
-    private String name;
-    
-    @NotNull
-    @Email(message = "Invalid E-mail Format")
-    private String email;
+	@Size(min = 1, max = 20, message = "Please input 20 characters or less")
+	private String name;
 
-    @NotNull
-    private String contents;
+	@NotNull
+	@Email(message = "Invalid E-mail Format")
+	private String email;
+
+	@NotNull
+	private String contents;
+
+
 
 	public String getName() {
 		return name;
@@ -43,6 +46,4 @@ public class InquiryForm{
 	public void setContents(String contents) {
 		this.contents = contents;
 	}
-
-
 }

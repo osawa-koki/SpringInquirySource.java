@@ -3,6 +3,8 @@ package com.example.demo.app.inquiry;
 import com.example.demo.service.InquiryService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,37 +20,36 @@ public class InquiryController {
 // 	private final InquiryService inquiryService;
 
 	// Add an annotation here
- 	public InquiryController(InquiryService inquiryService){
- 		this.inquiryService = inquiryService;
- 	}
+// 	public InquiryController(InquiryService inquiryService){
+// 		this.inquiryService = inquiryService;
+// 	}
 
-	@GetMapping
-	public String index(Model model) {
-
-		//hands-on
-
-		return "inquiry/index";
-	}
 
 	@GetMapping("/form")
-	public String form(Model model) {
+	public String form(InquiryForm inquiryForm, Model model) {
 		model.addAttribute("title", "Inquiry Form");
 		return "inquiry/form";
 	}
 
+	// ブラウザバック用
 	@PostMapping("/form")
 	public String formGoBack(InquiryForm inquiryForm, Model model) {
-		model.addAttribute("title", "InquiryForm");
+		model.addAttribute("title", "Inquiry Form");
 		return "inquiry/form";
 	}
 
 
 	@PostMapping("/confirm")
-	public String confirm(/*Add parameters. */) {
+	public String confirm(@Validated InquiryForm inquiryForm, BindingResult result, Model model) {
 
-		//hands-on
+		 if (result.hasErrors()) {
+			 model.addAttribute("title", "Inquiry Form");
+			 return "inquiry/form";
+		 }
 
-		return "inquiry/confirm";
+		 model.addAttribute("title", "Confirm Page");
+
+		 return "inquiry/confirm";
 	}
 
 	@PostMapping("/complete")
