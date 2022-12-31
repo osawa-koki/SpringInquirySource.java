@@ -13,11 +13,11 @@ Springフレームワークについての学習用プロジェクト。
 Dockerで実行するなら以下の通り。  
 
 ```shell
-docker build -t java-spring-todo .
-docker run -p 80:80 -it --rm --name my-java-spring-todo java-spring-todo
+docker build -t java-spring-inquiry .
+docker run -p 80:80 -it --rm --name my-java-spring-inquiry java-spring-inquiry
 
 # 一行で書くなら
-docker build -t java-spring-todo . && docker run -p 80:80 -it --rm --name my-java-spring-todo java-spring-todo
+docker build -t java-spring-inquiry . && docker run -p 80:80 -it --rm --name my-java-spring-inquiry java-spring-inquiry
 ```
 
 ## デプロイ設定(Render.com)
