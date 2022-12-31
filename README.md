@@ -3,7 +3,7 @@
 Springフレームワークについての学習用プロジェクト。  
 がんばろ♪  
 
-![成果物](./dev/.development/inquiry.gif)  
+![成果物](./.development/inquiry.gif)  
 
 ## 実行方法
 
