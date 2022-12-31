@@ -1,4 +1,4 @@
-# SpringBasicSource.java
+# SpringInquirySource.java
 
 Springフレームワークについての学習用プロジェクト。  
 がんばろ♪  
