@@ -3,6 +3,36 @@
 Springフレームワークについての学習用プロジェクト。  
 がんばろ♪  
 
+![成果物](./dev/.development/inquiry.gif)  
+
+## 実行方法
+
+普通にEclipseやIntelliJ IDEAで実行すればOK  
+<http://localhost:80>へアクセス。  
+
+Dockerで実行するなら以下の通り。  
+
+```shell
+docker build -t java-spring-todo .
+docker run -p 80:80 -it --rm --name my-java-spring-todo java-spring-todo
+
+# 一行で書くなら
+docker build -t java-spring-todo . && docker run -p 80:80 -it --rm --name my-java-spring-todo java-spring-todo
+```
+
+## デプロイ設定(Render.com)
+
+| キー | バリュー |
+| ---- | ---- |
+| Name | java-spring-inquiry |
+| Region | Oregon(US West) |
+| Branch | main |
+| Root Directory |  |
+| Environment | Docker |
+| Dockerfile Path | ./Dockerfile |
+| Docker Build Context Directory |  |
+| Docker Command |  |
+
 ## 自分用メモ
 
 ### @configuration
